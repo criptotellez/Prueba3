@@ -1,0 +1,183 @@
+{% extends 'app/base.html' %}
+
+{% block contenido %} 
+
+{% load static %}
+<body>
+
+    <nav class="navbar navbar-default">
+        <img src="{%static 'app/img/Logo.png' %}" alt="logo_caos_news" width="160" height="150">
+        <div class="panel1">
+            <script>
+                $.getJSON('https://pomber.github.io/covid19/timeseries.json', function(covid){
+                    var sacarDatos =`<left><h3>Casos Covid Confirmados en Chile : ${covid["Chile"][210].confirmed}</h3>`
+                    $(".panel1").html(sacarDatos);
+                } )
+            </script>
+        </div>
+        <div class="panel2">
+            <script>
+                $.getJSON('https://mindicador.cl/api', function(divisas){
+                    var sacarDatos1 =`<right><h3> Valor UF : ${divisas["uf"]["valor"]} / Dolar : ${divisas["dolar"]["valor"]} / Euro : ${divisas["euro"]["valor"]} / BTC : ${divisas["bitcoin"]["valor"]}</h3>`
+                    $(".panel2").html(sacarDatos1);
+                } )
+            </script>
+        </div>
+        <div id="est_registro" ><p>Usuario : <input type="text" name="usuario" placeholder="Estado de Usuario" maxlength="6"></p></div>
+        <div class="container-fluid">
+
+            <div class="navbar-header" >
+
+                <a class="navbar-brand" href=""></a>
+
+            </div>
+            <ul class="nav navbar-nav" >
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="iniciar.html">Iniciar Sesión</a></li>
+                <li><a href="registrar.html">Registrar</a></li>
+                <li><a href="#">Publica!</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="home-denuncia.html">Denuncias</a></li>
+                <li><a href="#">Contáctanos</a></li>
+                <li><a href="#">Nosotros</a></li>
+                
+            </ul>
+        
+        </div>
+
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <a title="Valparaíso" href="#noticia-1"><img src="{%static 'app/img/5697038.png' %}" class="center-block" alt="noticia1" width="768" height="432"></a>
+               <div class="carousel-caption">
+                    <h3>Valparaíso</h3>
+                    <p>Estudiantes reclaman malas prácticas por parte de la institución Duoc.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <a title="Viña del Mar" href="#noticia-2"><img src="{%static 'app/img/noticia1.jpg' %}" class="center-block" alt="disturbios" width="768" height="432"></a>
+                <div class="carousel-caption">
+                    <h3>Viña del mar</h3>
+                    <p>Graves incidentes se registran a las afueras de Duoc Uc sede Valparaiso.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <a title="Quilpué" href="#noticia-3"><img src="{%static 'app/img/barcelona-disturbios.png' %}" class="center-block" alt="barcelona-disturbios"></a>
+                <div class="carousel-caption">
+                    <h3>Quilpué</h3>
+                    <p>Graves incidentes se registran a las afueras de Universidad Santa Maria Viña del mar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <div class="container">
+    
+        <h1>NOTICIAS NACIONALES</h1>
+        <div id="searchform">
+            <div class="input-group">
+            <div class="form-inline">
+              <input type="search" id="form1" class="form-control " placeholder="Búsqueda noticia / autor / categoría" size="70"/>
+              <label class="form-label" for="form1"></label>
+            </div>
+            <button type="button" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+              Buscar
+            </button>
+          </div>
+        </div>
+        
+        <div class="container" style="background-color: rgba(105, 105, 105, 0.623);">        
+            <a name="noticia-1" style="text-decoration:none" ></a>
+            <h3>Valparaíso</h3>
+            <p class="text-justify">
+            <img src="{%static 'app/img/valparaiso.jpg' %}" alt="imagen-cleta" width="480" height="260" align="left" style="margin: 10px 10px 10px 0px;float: left; "> 
+        
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, illum recusandae laudantium animi ipsa dolorem neque obcaecati sed iusto quibusdam itaque, provident, at repellendus deleniti alias debitis dolore id mollitia!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis saepe ea quos dolor magni quidem perferendis minus odio dolorum blanditiis tenetur quod ipsa non, eveniet beatae facilis libero facere iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatum hic asperiores sed quod aperiam at laboriosam doloremque, quia ullam nobis, enim non pariatur sint temporibus, veritatis suscipit velit ducimus.
+
+            </p>
+        </div>
+        
+
+        <div class="container" >
+            <a name="noticia-2" style="text-decoration:none"></a>
+            <h3>Viña del Mar</h3>
+            <p class="text-justify">
+            <img src="{%static 'app/img/Viña.jpg' %}" alt="Auto-quemado" width="480" height="260" align="left" style="margin: 10px 10px 10px 0px;float: left; "> 
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, illum recusandae laudantium animi ipsa dolorem neque obcaecati sed iusto quibusdam itaque, provident, at repellendus deleniti alias debitis dolore id mollitia!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis saepe ea quos dolor magni quidem perferendis minus odio dolorum blanditiis tenetur quod ipsa non, eveniet beatae facilis libero facere iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatum hic asperiores sed quod aperiam at laboriosam doloremque, quia ullam nobis, enim non pariatur sint temporibus, veritatis suscipit velit ducimus.
+    
+            </p>
+        </div>
+        
+
+        <div class="container" style="background-color: rgba(105, 105, 105, 0.623);">
+            <a name="noticia-3" style="text-decoration:none" ></a>
+            <h3>Quilpué</h3>
+            <p class="text-justify">
+            <img src="{%static 'app/img/quilpue.jpg' %}" alt="cabros-vs-polis" width="480" height="260" align="left" style="margin: 10px 10px 10px 0px;float: left; ">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, illum recusandae laudantium animi ipsa dolorem neque obcaecati sed iusto quibusdam itaque, provident, at repellendus deleniti alias debitis dolore id mollitia!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis saepe ea quos dolor magni quidem perferendis minus odio dolorum blanditiis tenetur quod ipsa non, eveniet beatae facilis libero facere iusto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatum hic asperiores sed quod aperiam at laboriosam doloremque, quia ullam nobis, enim non pariatur sint temporibus, veritatis suscipit velit ducimus.
+    
+            </p>
+        </div>
+        <p>-</p>
+
+        
+    </div>
+
+
+<!-- INICIAR SESIÓN -->
+<div id="iniciarSesionModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Iniciar sesión</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <a href="iniciar.html">
+                  </form>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- INICIAR SESIÓN -->
+
+{% endblock %}
+

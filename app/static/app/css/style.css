@@ -1,0 +1,32 @@
+#carousel-inner{
+    height: 200px;
+}
+#container-fluid{
+    height: 100px;
+    ;
+    
+   
+}
+
+#item active{
+    margin-top: 100px;
+}
+
+
+body{
+    background: linear-gradient(180deg,white, grey);
+}
+
+nav{
+    background:linear-gradient(-90deg,grey,white);
+}
+
+#est_registro{
+    float: right;
+    margin-right: 20px;
+    margin-top: 160px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+

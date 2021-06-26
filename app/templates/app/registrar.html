@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{%static 'app/css/StyleLog.css'%}">
+    <title>Registrar</title>
+
+    <style>
+        .error {
+            color: rgba(122, 4, 4, 0.856);
+            padding-left: 12px;
+        }
+        body {background-image: url(imagenes/login4k2.jpg);}
+    </style>
+</head>
+
+<body id="bg" style="background-image: url('{% static "app/img/Login4k2.jpg" %}');">
+    <div class="Log">
+        <h1>Formulario Registro</h1>
+        <form action="#" id="frmDatos">
+            <label for="nombre ">Nombre</label>
+            <input class= 'bot1' input type="text" id="nombre"><br>
+            <label for="contraseña">contraseña</label>
+            <input class= 'bot1'input type="password" id="contraseña"><br>
+            <label for="correo  ">correo</label>
+            <input type="email" id="correo"><br>
+            <span class="error">El campo Nombre es obligatorio y mayor a 4 digitos.</span><br>
+            <span class="error">El campo contraseña es obligatorio y mayor a 4 digitos.</span><br>
+            <input class= 'bot1'input type="submit" value="Registrar">
+            <li><a href="home.html"><img src="{%static 'app/img/botonvolver.png' %}"></a></li>
+            <li><a href="iniciar.html"><img src="{%static 'app/img/boton ya tienes cuenta.png' %}"></a></li>
+        </form>
+    
+        <br>
+    
+        <p id="resultado"></p>
+        <p id="resultadoN"></p>
+        <p id="resultadoR1"></p>
+    </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+        <script>
+            $(document).ready(() => {
+                $('.error').hide();
+                $('#frmDatos').submit(function(evento) {
+                    let nombre = $('#nombre').val().trim();
+    
+                    if (nombre.length < 4) {
+                        $('.error').show();
+                        return;
+                    }
+    
+                    $('.error').hide();
+    
+                    $('#resultadoN').text(`Su nombre es: ${nombre}`);
+                });
+            });
+        </script>
+        
+        <script>
+                $(document).ready(() => {
+                $('.error').hide();
+                $('#frmDatos').submit(function(evento) {
+                    let contraseña= $('#contraseña').val().trim();
+    
+                    if (contraseña.length < 4) {
+                        $('.error').show();
+                        return;
+                    }
+    
+                    $('.error').hide();
+    
+                    $('#resultado').text(`Su contraseña fue aceptada correctamente`);
+                });
+            });
+        </script>
+        
+        <script>
+            $(document).ready(() => {
+            $('.error').hide();
+            $('#frmDatos').submit(function(evento) {
+                let correo= $('#correo').val().trim();
+    
+                if (correo.length < 4) {
+                    $('.error').show();
+                    return;
+                }
+    
+                $('.error').hide();
+    
+                $('#resultadoR1').text(`Correo validado exitosamente`);
+            });
+        });
+        </script>
+
+
+</body>
+
+</html>

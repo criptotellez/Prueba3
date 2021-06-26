@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREAR DENUNCIAS</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %}">
+    <script src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' %}"></script>
+    <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js' %}"></script>
+    <script src="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+     <div class="container">
+         <div class="table">
+             <h1>CARGAR DENUNCIAS</h1>
+
+
+             <div class="table">
+                 <form method="post" action="" id="formulario">
+                     {% csrf_token %}
+                     <div class="form-group">
+                         {{form.as_table}}
+                     </div>
+                     <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                     <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                     <button class="btn btn-primary" onclick="location.href='home-denuncia.html'">Back</button>
+                     <br><br>
+                     <div id="error" class="alert alert-danger" role="alert"></div>
+
+                 </form>
+             </div>
+         </div>
+         <div>
+             <div class="alert alert-sucess" role="alert">
+                 {{mensaje}}
+
+             </div>
+         </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.Log{
+    list-style-type: none;
+    background-color: #d8e4e0 ;
+    border-radius: 5px;
+    font-family: 'calibri';
+    width: 400px;
+    height: 450px;
+    margin:  0px auto;
+}
+
+
+.bot1{
+    padding: auto;
+    margin-bottom: 5px;
+    
+}
+
+.Log2{
+    list-style-type: none;
+    background-color: #d8e4e0;
+    border-radius: 5px;
+    font-family: 'calibri';
+    width: 400px;
+    height: 500px;
+    margin:  0px auto;
+}
+
+.bg{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top;
+    background-attachment: fixed;
+}
